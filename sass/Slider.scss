@@ -1,0 +1,37 @@
+@import "mixin.scss";
+@mixin slide-transition{
+	$sec : .5s;
+	$trans : ease-out;
+	-webkit-transition: all $sec $trans;
+    -moz-transition: all $sec $trans;
+    -o-transition: all $sec $trans;
+    -ms-transition: all $sec $trans;
+    transition: all $sec $trans;
+}
+
+.Slider{
+	overflow: hidden;
+	@include center;
+	@include slide-transition;
+	top:auto;
+	margin-top:auto;
+	bottom:0px;
+	margin-bottom: 0px;
+	background-color: #FA100F;
+	width: auto;
+	height: 40px;
+	border-top-style: solid;
+	border-top-width: thick;
+	border-top-color: #FF5200;
+	&:target{height:400px;}
+		.elements
+		{
+			overflow:hidden;
+			@include slide-transition;
+			text-align: center;
+			text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+			opacity:1;
+			width:inherit;
+			height:inherit;
+		}
+}
